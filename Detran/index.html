@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidade x Nacionalidade</title>
+    <style>
+        #res{
+            margin-top: 20px;
+        }
+        #res2{
+            margin-top: 20px;
+        }
+        #teste{
+            margin-top:200px;
+        }
+    </style>
+</head>
+<body onload="good()"><h1>DETRAN</h1>
+       <h2>Dados básicos</h2>
+    <Div id="div">
+   Nacionalidade: <input type="text" name="nacio1" id="nacio1" placeholder="Digita a sua nacionalidade" >
+   Nome: <input type="text" name="nome1" id="nome1" placeholder="Digite o seu nome"> 
+   Carro: <input type="text" name="carro1" id="carro1" placeholder="Digita o seu carro"> 
+         <input type="button" value="Confirmar" id="btn" onclick="mod()"><br>
+    </div>
+    <div id="res"></div>
+    <h2>Sua velocidade</h2>
+    <Div id="div2">
+        Velocidade: <input type="number" name="vel1" id="vel1" placeholder="Digita a velocidade"> Km/h
+         <input type="button" value="Verificar" id="btn2" onclick="vel()"><br>
+         </div>
+         <div id="res2"></div>
+
+         <script>
+
+            function mod(){
+            
+            var nacionalidade = window.document.getElementById('nacio1')
+            var nome = window.document.getElementById('nome1')
+            var carro = window.document.getElementById('carro1')
+            var resultado = window.document.getElementById('res')
+            var nacio = (nacionalidade.value)
+            var nomes = (nome.value)
+            var carros = (carro.value)
+            resultado.innerHTML = `Sua nacionalidade: ${nacio} | Seu nome: ${nomes} | Seu carro:${carros} `
+
+           if (nacio == 'Brasileiro' || nacio== 'brasileiro'  ) {
+            resultado.innerHTML += "<p>Você é Brasileiro</p>"
+           }
+           else {
+            
+            resultado.innerHTML += "<p>Você é Estrangeiro</p>"
+        
+        }
+
+        
+            }
+            
+            function vel(){
+            var v = window.document.getElementById('vel1')
+            var re = window.document.getElementById('res2')
+            var vel = Number(v.value)
+            re.innerHTML = `Velocidade atual ${vel} <strong>km/h</strong> `
+            
+            if (vel > 80){
+                re.innerHTML += `<p>Velocidade está acima do permitido<p> `
+            }
+            else {
+                re.innerHTML += `<p>Velocidade está dentro do permitido<p> `
+            }
+            }
+
+            function good(){
+      // sobre a hora do dia
+                const horas = new Date()
+                const agora = horas.getHours()
+                //window.alert(`Agora são ${agora} horas`)
+                if (agora > 11  && agora < 18){
+
+                    window.alert('Boa tarde')
+                }
+                else if (agora >= 18  && agora <= 23){
+
+                   window.alert('Boa noite')
+            }
+             else {
+                window.alert('Bom dia')
+            }
+                  //Sobre o dia da semana
+            const hoje = new Date()
+            const dia = hoje.getDay()
+    
+            switch(dia){
+                case 0:
+                // window.alert('Tenha um ótimo Domingo')
+
+                 break; 
+                 case 1:
+                // window.alert('Tenha uma ótima Segunda')
+                 break; 
+                 case 2:
+            
+                // window.alert('Tenha uma ótima Terça')
+                 break; 
+                 case 3:
+                window.alert('Tenha uma ótima Quarta')
+                 break;
+                 case 4:
+               //  window.alert('Tenha uma ótima Quinta')
+                 break;
+                 case 5:
+                // window.alert('Tenha uma ótima Sexta')
+                 break;
+                 case 6:
+               //  window.alert('Tenha um ótimo Sábado')
+                 break;
+                 default: 
+                //  window.alert('?') 
+                 break;
+
+        } 
+    }
+           
+            
+
+            
+        
+            </script>
+</body>
+
+</html>
+

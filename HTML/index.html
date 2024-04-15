@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulário </h1>
+    <form action="index.php"   method="get" autocomplete="on">
+        <p><label for="inome">Nome</label> <input type="text" name="nome" id="inome" placeholder="Digite seu nome" autocomplete="name"> 
+        <label for="idade1">Idade</label> <input type="number"name="idade" id="idade1" placeholder="Digite sua idade" min="0" max="100" required> 
+        <label for="icpf">CPF</label> <input type="number" name="cpf"id="icpf" placeholder="Digite seu CPF" required> 
+        </p>
+        <p>
+            <label for="idata">Data</label> <input type="date" name="data" id="idata"> 
+        </p>
+        <p>
+            <label for="idata">Hora</label> <input type="time" name="hora" id="ihora"> 
+        </p>
+        <p><input type="submit" value="Enviar" id="sb"> 
+            <input type="reset" value="Limpar" id="rs"> 
+            </p>
+    </form>
+</body>
+</html>

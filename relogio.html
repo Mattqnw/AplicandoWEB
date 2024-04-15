@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+<head>
+    <meta charset='utf-8'/>
+    <title>Fernando da Cruz - Tutoriais</title>
+    <script>
+    function verHora(){
+        let hora = new Date();
+        let h = hora.getHours();
+        let m = hora.getMinutes();
+        let s = hora.getSeconds();
+        m = zero(m);
+        s = zero(s);
+        document.getElementById('relogio').innerHTML = h+':'+m+':'+s;
+        atualiza = setTimeout('verHora()',500);
+    }
+    function zero(x){
+        if(x < 10){
+            x = '0'+x;
+        }
+        return x;
+    }
+    </script>
+</head>
+<body onload='verHora()'>
+    <h1 id='relogio'></h1>
+</body>
+</html>
